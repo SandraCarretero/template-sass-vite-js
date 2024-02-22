@@ -6,11 +6,11 @@ $breakpoints: (
 
 @mixin responsive($key) {
   @if map-has-key($breakpoints, $key) {
-    @media screen and (min-width: map-get($breakpoints, $key)) {
+    @media screen and (width > map-get($breakpoints, $key)) {
       @content;
     }
   } @else {
-    @media screen and (min-width: $key) {
+    @media screen and (width > $key) {
       @content;
     }
   }
